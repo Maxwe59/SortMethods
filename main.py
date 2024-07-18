@@ -7,6 +7,7 @@ import pygame
 from Visualize import Graph
 from CustomColor import Color
 from BubbleSort import BubbleSort
+from SelectionSort import SelectionSort
 
 # setup/global variables
 pygame.init()
@@ -24,7 +25,7 @@ def main():
     white: Color = Color(255,255,255)
     red: Color = Color(255,0,0)
     green: Color = Color(0,255,0)
-    new = Graph(500,100,1000, white, red, green,(RESOLUTION_X, RESOLUTION_Y), window)
+    new = Graph(SelectionSort,100,100,1000, white, red, green,(RESOLUTION_X, RESOLUTION_Y), window)
 
     run = True
     while run:

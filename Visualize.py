@@ -4,10 +4,14 @@ from CustomColor import Color
 import copy
 import time
 from SortMethod import Sort
-from BubbleSort import BubbleSort
+from typing import TypeVar, Generic, Type
 
-class Graph:
-    def __init__(self, num_items: int, low: int, high: int, rect_color: Color, select_color: Color, check_color: Color, resolution: tuple[int, int], window) -> None:
+
+T = TypeVar('T', bound=Sort) #defines generic type T to take in objects inherited from Sort class
+
+
+class Graph(Generic[T]):
+    def __init__(self, sort_method: Type[T], num_items: int, low: int, high: int, rect_color: Color, select_color: Color, check_color: Color, resolution: tuple[int, int], window) -> None:
         # Color variables
         self.rect_color: tuple[int,int,int] = rect_color.getColor()
         self.select_color: tuple[int,int,int] = select_color.getColor()
@@ -18,7 +22,7 @@ class Graph:
         self.low: int = low #note: bar height is calculated based on ratio of the biggest index and the resolution, do not set ratio of low/high to something too small otherwise some bars might not be visible
         self.high: int = high
         array: list[int] = [random.randint(self.low, self.high) for i in range(self.num_items)]
-        self.sort_method: Sort = BubbleSort(array)
+        self.sort_method: Sort = sort_method(array)
         self.sorted_array = copy.deepcopy(array) #create sorted array to check when self.array is fully sorted and stop program
         self.sorted_array.sort()
 
