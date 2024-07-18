@@ -1,13 +1,13 @@
 import pygame
 import random
-import CustomColor as C
+from CustomColor import Color
 import copy
 import time
 from SortMethod import Sort
 from BubbleSort import BubbleSort
 
 class Graph:
-    def __init__(self, num_items: int, low: int, high: int, rect_color: C.Color, select_color: C.Color, check_color: C.Color, resolution: tuple[int, int], window) -> None:
+    def __init__(self, num_items: int, low: int, high: int, rect_color: Color, select_color: Color, check_color: Color, resolution: tuple[int, int], window) -> None:
         # Color variables
         self.rect_color: tuple[int,int,int] = rect_color.getColor()
         self.select_color: tuple[int,int,int] = select_color.getColor()
