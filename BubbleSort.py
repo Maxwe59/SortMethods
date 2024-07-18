@@ -17,8 +17,6 @@ class BubbleSort(Sort):
             self.index = 0
 
         if self.array[self.index] > self.array[self.index + 1]:
-            temp = self.array[self.index]
-            self.array[self.index] = self.array[self.index + 1]
-            self.array[self.index + 1] = temp
+            self.swap(self.index, self.index+1)
 
         self.index += 1

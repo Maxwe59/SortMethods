@@ -17,9 +17,8 @@ class SelectionSort(Sort):
 
         if self.index == len(self.array) - 1:
             # when reaches end of list
-            temp = self.array[self.skip_indices]
-            self.array[self.skip_indices] = self.array[self.curr_min]
-            self.array[self.curr_min] = temp
+            self.swap(self.skip_indices,self.curr_min)
+
             self.skip_indices += 1
             self.curr_min, self.index = self.skip_indices, self.skip_indices
 

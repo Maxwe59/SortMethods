@@ -12,3 +12,10 @@ class Sort(ABC):
     @abstractmethod
     def sort(self) -> None:
         pass
+
+    def swap(self, a: int, b: int) -> None:
+        temp = self.array[a]
+        self.array[a] = self.array[b]
+        self.array[b] = temp
+
+
