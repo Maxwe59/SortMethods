@@ -52,7 +52,7 @@ class Graph:
 
         #iterates through the array and renders all values based on ratio of the screen and biggest number
         for index, rectangle in enumerate(self.array):
-            color: tuple[int,int,int] = (self.select_color if (self.change_color[0] <= index <= self.change_color[1]) else self.rect_color)
+            color: tuple[int,int,int] = (self.select_color if (index in self.change_color) else self.rect_color)
             if self.finish:
                 color = self.check_color if (self.change_color[0] <= index <= self.change_color[1]) else self.rect_color
             pygame.draw.rect(self.window, color, self.rect_params(index, rectangle))  # x,y,width,height

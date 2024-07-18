@@ -7,5 +7,5 @@ class Sort(ABC):
         self.array: list[int] = array
 
     @abstractmethod
-    def sort(self, index: int) -> None:
+    def sort(self, index: int) -> list[int]:
         pass

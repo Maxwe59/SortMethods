@@ -3,7 +3,7 @@ class BubbleSort(Sort):
     def __init__(self, array: list[int]) -> None:
         self.array: list[int] = array
 
-    def sort(self, index: int) -> None:
+    def sort(self, index: int, ) -> list[int]:
         change_color = [index, index + 1]
         if index == len(self.array) - 1:
             index = 0
@@ -15,5 +15,3 @@ class BubbleSort(Sort):
 
         index += 1
 
-
-e = BubbleSort([1,2])
